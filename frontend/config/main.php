@@ -1,15 +1,16 @@
 <?php
 $params = array_merge(
-    require __DIR__ . '/../../common/config/params.php',
-    require __DIR__ . '/../../common/config/params-local.php',
-    require __DIR__ . '/params.php',
-    require __DIR__ . '/params-local.php'
+    require(__DIR__ . '/../../common/config/params.php'),
+    require(__DIR__ . '/../../common/config/params-local.php'),
+    require(__DIR__ . '/params.php'),
+    require(__DIR__ . '/params-local.php')
 );
 
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language' => 'ru',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
         'request' => [
@@ -36,14 +37,30 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'news-list' => 'test/index',
+                'news-prosmotr/<id:.*>' => 'test/view',
+
             ],
         ],
-        
+        'stringHelper' => [
+            'class' => 'frontend\components\StringHelper',
+        ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'smolingm@gmail.com',
+                'password' => '',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
+        ],
     ],
     'params' => $params,
 ];
