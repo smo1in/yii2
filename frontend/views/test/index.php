@@ -1,4 +1,4 @@
-<?php foreach ($list as $item): ?>
+<?php foreach ($list as $item) : ?>
 
     <h1>
         <a href="<?php echo Yii::$app->urlManager->createUrl(['test/view', 'id' => $item['id']]); ?>">
@@ -9,5 +9,6 @@
 
     <hr>
 
-<?php endforeach;
+<?php endforeach;?>
 
+<h3>For counting quantity of news <a href=<?php echo Yii::$app->urlManager->createUrl('test/quantity')?>>Push here!</a></h3>

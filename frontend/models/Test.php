@@ -41,4 +41,16 @@ class Test
 
         return Yii::$app->db->createCommand($sql)->queryOne();
     }
+
+    /**
+     * Get an array of records in news table for counting quantity items
+     * @return array|false
+     */
+    public static function getItemsArray()
+    {
+
+        $sql = "SELECT * FROM news ";
+
+        return Yii::$app->db->createCommand($sql)->queryOne();
+    }
 }

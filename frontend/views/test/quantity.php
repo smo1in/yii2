@@ -1,0 +1,1 @@
+ <h1>the quantity of items in news table is <?php echo count($itemsArray);?></h1>

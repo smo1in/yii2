@@ -43,24 +43,14 @@ return [
             'rules' => [
                 'news-list' => 'test/index',
                 'news-prosmotr/<id:.*>' => 'test/view',
+                'news-count'=>'test/quantity',
 
             ],
         ],
         'stringHelper' => [
             'class' => 'frontend\components\StringHelper',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => false,
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 'smolingm@gmail.com',
-                'password' => '',
-                'port' => '587',
-                'encryption' => 'tls',
-            ],
-        ],
+        
     ],
     'params' => $params,
 ];
