@@ -44,11 +44,12 @@ return [
                 'news-list' => 'test/index',
                 'news-prosmotr/<id:.*>' => 'test/view',
                 'news-count'=>'test/quantity',
+                'mail'=>'test/mail',
 
             ],
         ],
         'stringHelper' => [
-            'class' => 'frontend\components\StringHelper',
+            'class' => 'common\components\StringHelper',
         ],
         
     ],
