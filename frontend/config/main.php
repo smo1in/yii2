@@ -41,10 +41,11 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'news-list' => 'test/index',
+                'news' => 'test/index',
                 'news-prosmotr/<id:.*>' => 'test/view',
                 'news-count'=>'test/quantity',
                 'mail'=>'test/mail',
+                'employee'=>'employee/index',
 
             ],
         ],

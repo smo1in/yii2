@@ -2,11 +2,15 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use yii\web\Controller;
 use frontend\models\Employee;
 
-class EmployeeControler extends Controller
+
+
+class EmployeeController extends Controller
 {
+
     public function actionIndex()
     {
         $employee1 = new Employee();
@@ -15,6 +19,12 @@ class EmployeeControler extends Controller
         $employee1->middleName = 'John';
         $employee1->salary = 1000;
 
-        echo $employee1['first_name'];
+        echo $employee1['salary'];
+
+        echo '<hr>';
+
+        foreach ($employee1 as $attribute => $value) {
+            echo "$attribute: $value <br>";
+        }
     }
-};
+}
