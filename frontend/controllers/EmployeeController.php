@@ -26,5 +26,23 @@ class EmployeeController extends Controller
         foreach ($employee1 as $attribute => $value) {
             echo "$attribute: $value <br>";
         }
+        
+        echo '<hr>';
+
+        $array = $employee1->toArray();
+        echo '<pre>';
+        print_r($array);
+        echo '<pre>';
+        
+        echo '<hr>';
+
+        echo '<pre>';
+        print_r($employee1->getAttributes());
+        print_r($employee1->attributes);
+        echo '<pre>';
+        
+        echo '<pre>';
+        print_r($employee1->attributes());
+        echo '<pre>';
     }
 }

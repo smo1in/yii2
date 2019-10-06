@@ -13,8 +13,10 @@ return [
     'language' => 'ru',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        
         'request' => [
             'csrfParam' => '_csrf-frontend',
+            'enableCsrfValidation' => false,
         ],
         'user' => [
             'identityClass' => 'common\models\User',
