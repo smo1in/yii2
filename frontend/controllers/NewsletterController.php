@@ -18,10 +18,29 @@ class NewsletterController extends Controller
         */
         $formData = Yii::$app->request->post();
 
-        //creating new  instance 
+        //creating new  instance экземпляр
         $model = new Subscribe();
 
-        //вызов шаблона subscribe
-        return $this->render('subscribe');
+        //is post?
+        if (Yii::$app->request->isPost) {
+            /*
+             в атрибут email 
+            записывается данные из массива 
+            $formData элемента email
+            */
+            
+            $model->email = $formData['email'];
+            /*если данные validate и save
+            flash сообщение ключ+сообщение 
+            ключ определить для  alert
+            */
+            if ($model->validate() && $model->save()) {
+                Yii::$app->session->setFlash('info', 'Subscribe completed!!!');
+        }
+
+        //вызов шаблона subscribe если ошибки,то они рендерятся
+        return $this->render('subscribe', [
+            'model' => $model,
+        ]);
     }
 }
