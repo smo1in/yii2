@@ -28,7 +28,7 @@ class NewsletterController extends Controller
             записывается данные из массива 
             $formData элемента email
             */
-            
+
             $model->email = $formData['email'];
             /*если данные validate и save
             flash сообщение ключ+сообщение 
@@ -36,6 +36,7 @@ class NewsletterController extends Controller
             */
             if ($model->validate() && $model->save()) {
                 Yii::$app->session->setFlash('info', 'Subscribe completed!!!');
+            }
         }
 
         //вызов шаблона subscribe если ошибки,то они рендерятся
