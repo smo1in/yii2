@@ -13,7 +13,7 @@ return [
     'language' => 'ru',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        
+
         'request' => [
             'csrfParam' => '_csrf-frontend',
             'enableCsrfValidation' => false,
@@ -45,16 +45,17 @@ return [
             'rules' => [
                 'news' => 'test/index',
                 'news-prosmotr/<id:.*>' => 'test/view',
-                'news-count'=>'test/quantity',
-                'mail'=>'test/mail',
-                'employee'=>'employee/index',
+                'news-count' => 'test/quantity',
+                'mail' => 'test/mail',
+                'employee' => 'employee/index',
 
             ],
+
         ],
         'stringHelper' => [
             'class' => 'common\components\StringHelper',
         ],
-        
+
     ],
     'params' => $params,
 ];
