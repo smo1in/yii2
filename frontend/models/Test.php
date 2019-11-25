@@ -7,15 +7,13 @@ use Yii;
 /**
  * 
  */
-class Test
-{
+class Test {
 
     /**
      * @param integer $max
      * @return array
      */
-    public static function getNewsList($max)
-    {
+    public static function getNewsList($max) {
         $max = intval($max);
         $sql = 'SELECT * FROM news LIMIT ' . $max;
 
@@ -34,8 +32,7 @@ class Test
      * @param integer $id
      * @return array|false
      */
-    public static function getItem($id)
-    {
+    public static function getItem($id) {
         $id = intval($id);
         $sql = "SELECT * FROM news WHERE id = $id";
 
@@ -46,11 +43,11 @@ class Test
      * Get an array of records in news table for counting quantity items
      * @return array|false
      */
-    public static function getItemsArray()
-    {
+    public static function getItemsArray() {
 
         $sql = "SELECT * FROM news ";
 
         return Yii::$app->db->createCommand($sql)->queryOne();
     }
+
 }

@@ -5,16 +5,12 @@ namespace frontend\controllers;
 use Yii;
 use yii\web\Controller;
 use frontend\models\Employee;
-
 use frontend\models\example\Animal;
 use frontend\models\example\Human;
 
-class EmployeeController extends Controller
-{
-    
+class EmployeeController extends Controller {
 
-    public function actionIndex()
-    {
+    public function actionIndex() {
         $employee1 = new Employee();
         $employee1->firstName = 'Alex';
         $employee1->lastName = 'Smith';
@@ -48,8 +44,7 @@ class EmployeeController extends Controller
         echo '<pre>';
     }
 
-    public function actionTest()
-    {
+    public function actionTest() {
         $human1 = new Human();
         $animal1 = new Animal();
 
@@ -58,8 +53,7 @@ class EmployeeController extends Controller
         $human1->walk();
     }
 
-    public function actionRegister()
-    {
+    public function actionRegister() {
         $model = new Employee();
         $model->scenario = Employee::SCENARIO_EMPLOYEE_REGISTER;
 
@@ -75,12 +69,11 @@ class EmployeeController extends Controller
         }
 
         return $this->render('register', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
 
-    public function actionUpdate()
-    {   //создание модели и использования сценария
+    public function actionUpdate() {   //создание модели и использования сценария
         $model = new Employee();
         $model->scenario = Employee::SCENARIO_EMPLOYEE_UPDATE;
 
@@ -97,7 +90,8 @@ class EmployeeController extends Controller
         //if model has mistakes in view errors alert
 
         return $this->render('update', [
-            'model' => $model,
+                    'model' => $model,
         ]);
     }
+
 }

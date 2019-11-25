@@ -4,8 +4,7 @@ namespace frontend\models;
 
 use yii\base\Model;
 
-class Employee extends Model
-{
+class Employee extends Model {
 
     const SCENARIO_EMPLOYEE_REGISTER = 'employee_register';
     const SCENARIO_EMPLOYEE_UPDATE = 'employee_update';
@@ -20,20 +19,17 @@ class Employee extends Model
     public $bornDate;
     public $sinceDate;
 
-    public function scenarios()
-    {
+    public function scenarios() {
 
         return [
             self::SCENARIO_EMPLOYEE_REGISTER =>
             ['firstName', 'lastName', 'middleName', 'email', 'position', 'idCode', 'bornDate', 'sinceDate'],
-            
             self::SCENARIO_EMPLOYEE_UPDATE =>
             ['firstName', 'lastName', 'middleName', 'position', 'idCode', 'bornDate', 'sinceDate'],
         ];
     }
 
-    public function rules()
-    {
+    public function rules() {
         return [
             [['firstName', 'lastName', 'email'], 'required'],
             [['firstName'], 'string', 'min' => 2],
@@ -43,8 +39,8 @@ class Employee extends Model
         ];
     }
 
-    public function save()
-    {
+    public function save() {
         return true;
     }
+
 }

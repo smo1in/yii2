@@ -55,4 +55,4 @@ $this->registerJsFile('@web/js/gallery/scripts.js', ['depends' => [GalleryAsset:
 		<img src="files/photos/salad.jpg" alt="image">
 	</div>
 
-</div>I
+</div>

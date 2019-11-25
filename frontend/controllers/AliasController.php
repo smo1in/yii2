@@ -5,10 +5,9 @@ namespace frontend\controllers;
 use Yii;
 use yii\web\Controller;
 
-class AliasController extends Controller
-{
-    public function actionExample()
-    {
+class AliasController extends Controller {
+
+    public function actionExample() {
         Yii::setAlias('@files', '/var/www/yii2/frontend/web');
 
         $result = mkdir(Yii::getAlias('@files') . '/test1');
@@ -20,4 +19,5 @@ class AliasController extends Controller
         $result = mkdir(Yii::getAlias('@files') . '/test3');
         var_dump($result);
     }
+
 }

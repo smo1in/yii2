@@ -1,4 +1,5 @@
 <?php
+
 return [
     'adminEmail' => 'smolingm@gmail.com',
     'maxNewsInList' => 4,

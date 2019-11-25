@@ -1,9 +1,10 @@
 <?php
+
 $params = array_merge(
-    require(__DIR__ . '/../../common/config/params.php'),
-    require(__DIR__ . '/../../common/config/params-local.php'),
-    require(__DIR__ . '/params.php'),
-    require(__DIR__ . '/params-local.php')
+        require(__DIR__ . '/../../common/config/params.php'),
+        require(__DIR__ . '/../../common/config/params-local.php'),
+        require(__DIR__ . '/params.php'),
+        require(__DIR__ . '/params-local.php')
 );
 
 return [
@@ -13,7 +14,6 @@ return [
     'language' => 'ru',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-
         'request' => [
             'csrfParam' => '_csrf-frontend',
             'enableCsrfValidation' => false,
@@ -48,14 +48,11 @@ return [
                 'news-count' => 'test/quantity',
                 'mail' => 'test/mail',
                 'employee' => 'employee/index',
-
             ],
-
         ],
         'stringHelper' => [
             'class' => 'common\components\StringHelper',
         ],
-
     ],
     'params' => $params,
 ];
