@@ -1,4 +1,5 @@
 <?php
+/* @var $this yii\web\View */
 /* @var $model frontend\models\Subscribe */
 
 /* example flash message 
@@ -6,6 +7,7 @@
   echo Yii::$app->session->getFlash('subscribeStatus');
   }
  */
+$this->title = 'subscribe';
 //errors print
 if ($model->hasErrors()) {
     echo '<pre>';
